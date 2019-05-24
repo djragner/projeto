@@ -1,0 +1,10 @@
+{% block conteudo %}
+    <div class="container">
+        <h1>Faça o seu login</h1>
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <input class="tbn btn-primary" type="submit" value="Login">
+        </form>
+    </div>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.http import HttpResponse
 from django.http import Http404
@@ -38,3 +38,7 @@ class ContatoView(FormView):
 
 class ContatoSucessoView(TemplateView):
     template_name = 'app_noticias/sucesso.html'
+
+def home (request):
+    return redirect ('login')
+

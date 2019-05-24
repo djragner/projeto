@@ -7,3 +7,10 @@
 		</div>
 	{% endif %}
 {% endfor %}
+
+{% if user.is_authenticated %}
+<p class="logged-in-p">
+	Olá {{ user.username }} espero que esteja tudo bem com você, o que deseja fazer?
+	<span class="sair"><a href="{% url 'logout' %}">Sair</a></span>
+</p>
+{% endif %}
