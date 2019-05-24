@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <META charset="UTF-8"></META>
+        <TItle>{{ noticia.titulo }}</TItle>
+    </head>
+<body>
+    <h1>
+        {{noticia.titulo}}
+    </h1>
+    <p>Por <strong>{{ noticia.autor }}</strong> em {{ noticia.data_de_publicacao }}</p>
+    <p>Tags:
+        {% for tag in noticia.tags.all %}
+            <a href="{% url 'detalhes' tag.pk %}">{{ tag }}</a>{% if not foloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+<div>
+    {{ noticia.conteudo | linebreaks }}
+</div>
+<P><a href="/">HOME</P></a>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<h1>Notícias</h1>
+
+{% for noticia in object_list %}
+	{% if noticia.publicado == True %}
+		<div>
+			<h2><a href="/noticia/{{ noticia.pk }}">{{ noticia.titulo }} </h2></a>
+		</div>
+	{% endif %}
+{% endfor %}
